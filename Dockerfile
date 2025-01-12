@@ -1,5 +1,5 @@
 # ベースイメージ
-FROM nvidia/cuda:12.1.0-runtime-ubuntu22.04
+FROM nvidia/cuda:12.4.0-runtime-ubuntu22.04
 
 # 必要なツールをインストール
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -17,8 +17,8 @@ RUN pip install \
     jupyterlab \
     numpy pandas matplotlib seaborn && \
     pip install \
-    torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-RUN pip install ultralytics
+    torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+RUN pip install ultralytics onnx onnxruntime
 
 # JupyterLabの設定
 RUN mkdir -p /workspace
