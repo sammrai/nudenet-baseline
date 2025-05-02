@@ -7,7 +7,6 @@ services:
     container_name: cuda_dev_env
     ports:
       - "8886:8888" # JupyterLabポート
-    runtime: nvidia
     deploy:
       resources:
         reservations:
